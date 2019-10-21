@@ -17,21 +17,25 @@ var logShow = {
     logs: [],
     initData: function() {
         var logArr = [];
-        for(var i = 0; i < 500; ++i) {
+        for(var i = 0; i < 100; ++i) {
             logArr.push({color: 'blue', id: i, text: '日志'+i});
         }
-        for(var i = 501; i < 1000; ++i) {
+        for(var i = 101; i < 250; ++i) {
             logArr.push({color: 'red', id: i, text: '日志'+i})
         }
-        for(var i = 1001; i < 1500; ++i) {
-            logArr.push({color: 'black', id: i, text: '日志'+i})
-        }
+				
+       // for(var i = 1001; i < 1500; ++i) {
+       //     logArr.push({color: 'blue', id: i, text: '日志'+i});
+       // }
+       // for(var i = 1001; i < 1500; ++i) {
+       //     logArr.push({color: 'black', id: i, text: '日志'+i})
+      //  }
         return logArr;
     },
     initLine: function(){
         var html = '';
         $.each(this.logs, function(i, o){
-            html += '<div class="line-item" style="color:'+o.color+'">_</div>';
+            html += '<div class="line-item" style="color:'+o.color+'">——</div>';
         });
         $('.mod-line').html(html);
     },
