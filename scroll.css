@@ -1,0 +1,54 @@
+#scrollView {
+    width: 320px;
+    height: 300px;
+    /*ä¸Šä¸‹è¾¹è·æ˜¯ä¸ºäº†æ¼”ç¤ºå½“æ»šåŠ¨åˆ°é¡¶éƒ¨æˆ–åº•éƒ¨æ—¶ï¼Œç»§ç»­æ»šåŠ¨é¼ æ ‡æ»šè½®ä¼šæ»šåŠ¨æ•´ä¸ªé¡µé¢*/
+    margin: 100px 0;
+    display: flex;
+	background-color:#ccc
+	
+}
+ 
+#scrollContent {
+    width: 300px;
+    height: 300px;
+    padding-left: 8px;
+    background-color: antiquewhite;
+    /*éšè—è¶…å‡ºæ»šåŠ¨å†…å®¹åŒºåŸŸçš„å…ƒç´ */
+    overflow: hidden;
+}
+ 
+#scrollTrack {
+    width: 20px;
+    height: 300px;
+    background-color: cadetblue;
+    display: flex;
+    /*ç«–ç€æŽ’åˆ—æ»šåŠ¨æ¡åŒºåŸŸå†…çš„ä¸Šä¸‹æŒ‰é’®ã€æ»‘å—ç­‰å…ƒç´ */
+    flex-direction: column;
+}
+ 
+#btnUp, #btnDown {
+    height: 20px;
+    background-color: brown;
+}
+ 
+#scrollBar {
+    height: 50px;
+    background-color: rgba(25%,35%,45%,0);
+	border-style:solid;
+	border-width: 3px;
+	
+}
+ 
+#trackDown {
+    /*è®©å¤§å¹…åº¦å‘ä¸‹æ»šåŠ¨ç‚¹å‡»åŒºåŸŸå æ®æŽ’åˆ—å®Œå…¶ä»–å…ƒç´ åŽå‰©ä¸‹çš„æ‰€æœ‰åŒºåŸŸ*/
+    flex-grow: 1;
+}
+ 
+/*å½“æ‹–åŠ¨æ»‘å—æ—¶ï¼Œç»™bodyå…ƒç´ åŠ ä¸Šè¯¥ç±»ï¼Œé˜²æ­¢é¼ æ ‡çš„æ‹–åŠ¨å¯¼è‡´ç½‘é¡µå†…å®¹çš„é€‰æ‹©æ“ä½œ*/
+.unselectable {
+    /*å½“å‰ç‰ˆæœ¬çš„ç«ç‹ï¼ˆ53ï¼‰å’ŒEdgeï¼ˆ15ï¼‰ä¸æ”¯æŒuser-selectæ ‡å‡†å±žæ€§ï¼Œéœ€è¦ä½¿ç”¨æµè§ˆå™¨åŽ‚å•†å‰ç¼€*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ï½
+
