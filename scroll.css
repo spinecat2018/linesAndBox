@@ -1,11 +1,9 @@
 #scrollView {
     width: 320px;
     height: 300px;
-    /*ä¸Šä¸‹è¾¹è·æ˜¯ä¸ºäº†æ¼”ç¤ºå½“æ»šåŠ¨åˆ°é¡¶éƒ¨æˆ–åº•éƒ¨æ—¶ï¼Œç»§ç»­æ»šåŠ¨é¼ æ ‡æ»šè½®ä¼šæ»šåŠ¨æ•´ä¸ªé¡µé¢*/
+    /*上下边距是为了演示当滚动到顶部或底部时，继续滚动鼠标滚轮会滚动整个页面*/
     margin: 100px 0;
     display: flex;
-	background-color:#ccc
-	
 }
  
 #scrollContent {
@@ -13,7 +11,7 @@
     height: 300px;
     padding-left: 8px;
     background-color: antiquewhite;
-    /*éšè—è¶…å‡ºæ»šåŠ¨å†…å®¹åŒºåŸŸçš„å…ƒç´ */
+    /*隐藏超出滚动内容区域的元素*/
     overflow: hidden;
 }
  
@@ -22,7 +20,7 @@
     height: 300px;
     background-color: cadetblue;
     display: flex;
-    /*ç«–ç€æŽ’åˆ—æ»šåŠ¨æ¡åŒºåŸŸå†…çš„ä¸Šä¸‹æŒ‰é’®ã€æ»‘å—ç­‰å…ƒç´ */
+    /*竖着排列滚动条区域内的上下按钮、滑块等元素*/
     flex-direction: column;
 }
  
@@ -32,23 +30,20 @@
 }
  
 #scrollBar {
-    height: 50px;
-    background-color: rgba(25%,35%,45%,0);
-	border-style:solid;
-	border-width: 3px;
-	
+    height: 20px;
+    background-color: rgba(100%,100%,100%,0);
+	border:solid 2px;
 }
  
 #trackDown {
-    /*è®©å¤§å¹…åº¦å‘ä¸‹æ»šåŠ¨ç‚¹å‡»åŒºåŸŸå æ®æŽ’åˆ—å®Œå…¶ä»–å…ƒç´ åŽå‰©ä¸‹çš„æ‰€æœ‰åŒºåŸŸ*/
+    /*让大幅度向下滚动点击区域占据排列完其他元素后剩下的所有区域*/
     flex-grow: 1;
 }
  
-/*å½“æ‹–åŠ¨æ»‘å—æ—¶ï¼Œç»™bodyå…ƒç´ åŠ ä¸Šè¯¥ç±»ï¼Œé˜²æ­¢é¼ æ ‡çš„æ‹–åŠ¨å¯¼è‡´ç½‘é¡µå†…å®¹çš„é€‰æ‹©æ“ä½œ*/
+/*当拖动滑块时，给body元素加上该类，防止鼠标的拖动导致网页内容的选择操作*/
 .unselectable {
-    /*å½“å‰ç‰ˆæœ¬çš„ç«ç‹ï¼ˆ53ï¼‰å’ŒEdgeï¼ˆ15ï¼‰ä¸æ”¯æŒuser-selectæ ‡å‡†å±žæ€§ï¼Œéœ€è¦ä½¿ç”¨æµè§ˆå™¨åŽ‚å•†å‰ç¼€*/
+    /*当前版本的火狐（53）和Edge（15）不支持user-select标准属性，需要使用浏览器厂商前缀*/
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-ï½
-
+}
