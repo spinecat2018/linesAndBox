@@ -2,9 +2,38 @@
     width: 320px;
     height: 300px;
     /*上下边距是为了演示当滚动到顶部或底部时，继续滚动鼠标滚轮会滚动整个页面*/
-    margin: 100px 0;
+    margin: 0;
     display: flex;
 }
+ 
+#lines {
+    width: 20px;
+    height: 300px;
+    position:absolute;
+	right:0px;
+	top:0px;
+	background-color: red;
+	display:flex;
+	flex-direction:column;
+}
+
+.line-item{
+	font-size:1px;
+	height:1px;
+}
+
+#top{
+    width: 320px;
+    height: 300px;
+    position:absolute;
+	right:0px;
+	top:0px;
+
+	
+}
+ 
+ 
+ 
  
 #scrollContent {
     width: 300px;
@@ -18,14 +47,15 @@
 #scrollTrack {
     width: 20px;
     height: 300px;
-    background-color: cadetblue;
+    background-color: rgba(100%,100%,100%,0);
     display: flex;
     /*竖着排列滚动条区域内的上下按钮、滑块等元素*/
     flex-direction: column;
 }
  
 #btnUp, #btnDown {
-    height: 20px;
+	width: 10px;
+    height: 0px;
     background-color: brown;
 }
  
@@ -35,9 +65,19 @@
 	border:solid 2px;
 }
  
+#trackUp {
+	
+	width: 10px;
+    background-color: yellow;
+} 
+ 
+ 
 #trackDown {
+	
+	width: 10px;
     /*让大幅度向下滚动点击区域占据排列完其他元素后剩下的所有区域*/
     flex-grow: 1;
+	background-color: green;
 }
  
 /*当拖动滑块时，给body元素加上该类，防止鼠标的拖动导致网页内容的选择操作*/
