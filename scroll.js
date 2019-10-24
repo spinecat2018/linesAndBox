@@ -2,18 +2,20 @@ var scrollContent = document.getElementById("scrollContent");
 var lines = document.getElementById("lines");
  
 //给滚动内容区域填充大量元素
-var linesHtml="";
+//var linesHtml="";
 for (var i = 1; i <= 300; i++) {
     var row = document.createElement("div");
     row.innerText = "第" + i + "行";
     scrollContent.appendChild(row);
-	//var line = document.createElement("div");
-   // line.innerText = "——————" ;
-	linesHtml+="<div class='line-item'>——————</div>"
-   // lines.appendChild(line);
+	var line = document.createElement("div");
+    line.className = "line" ;
+	var inLine = document.createElement("div");
+	inLine.className="inLine";
+	line.appendChild(inLine);
+	lines.appendChild(line);
 	
 }
-lines.innerHTML = linesHtml;
+//lines.innerHTML = linesHtml;
  
 //指示鼠标左键是否处于按下状态的变量，
 //在滑块上按下鼠标左键时设为true，在页面上任意位置松开时设回false
@@ -26,9 +28,9 @@ var mouseHeld = false;
 var previousClientY = 0;
 //滑块可滑动的距离，计算方式为整个滚动条高度度减去上下按钮的高度，
 //再减去滑块本身的高度
-var barMoveLength = 300 - 0 * 2 - 20;
+var barMoveLength = scrollContent.clientHeight*0.9;
 //内容区域可滚动的距离，计算方式为内容区域的总高度减去内容区域本身的高度
-var contentMoveLength = scrollContent.scrollHeight - 300;
+var contentMoveLength = scrollContent.scrollHeight - scrollContent.clientHeight;
  
 //为上下按钮注册事件处理程序
 document.getElementById("btnUp").addEventListener("click", function () {
@@ -73,6 +75,25 @@ document.addEventListener("mousemove", function (e) {
         previousClientY = e.clientY;
     }
 });
+
+//点击线条区域事件 1改变日志位置2改变方框位置
+
+var lines = document.getElementById("scrollTrack");
+
+lines.addEventListener("click", function (e) {
+	//alert("点！");
+    var clickY = e.offsetY;
+	var halfBar = document.getElementById("scrollBar").offsetHeight/2;
+	var pageMove = (clickY-halfBar)*contentMoveLength/barMoveLength;
+	scrollTo(pageMove);
+});
+
+
+
+
+
+
+
  
 //为内容区域注册鼠标滚轮事件处理程序
 //火狐浏览器使用和其他浏览器不同的滚轮事件和事件参数属性
