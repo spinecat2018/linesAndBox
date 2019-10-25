@@ -81,22 +81,22 @@
 #scrollBar {
     height: 10%;
     background-color: rgba(100%,100%,100%,0);
-	border:solid 2px;
+	border:solid 4px;
 }
  
 #trackUp {
 	
-	width: 10%;
-    background-color: yellow;
+	width: 100%;
+    background-color: rgba(100%,100%,100%,0);
 } 
  
  
 #trackDown {
 	
-	width: 10%;
+	width: 100%;
     /*让大幅度向下滚动点击区域占据排列完其他元素后剩下的所有区域*/
     flex-grow: 1;
-	background-color: green;
+	background-color: rgba(100%,100%,100%,0);
 }
  
 /*当拖动滑块时，给body元素加上该类，防止鼠标的拖动导致网页内容的选择操作*/

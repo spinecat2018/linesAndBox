@@ -43,12 +43,23 @@ document.getElementById("btnDown").addEventListener("click", function () {
 //为大幅度上下滚动点击区域注册事件处理程序
 //保存trackUp元素变量，
 //因为每次滚动时，都要改变它的高度，以达到移动滑块的效果
+	//点击后跳转到点击位置
 var trackUp = document.getElementById("trackUp");
-trackUp.addEventListener("click", function () {
-    scrollToRelative(-300);
+trackUp.addEventListener("click", function (e) {
+    //scrollToRelative(-300);
+	var clickY = e.clientY;
+	var halfBar = document.getElementById("scrollBar").offsetHeight/2;
+	var pageMove = (clickY-halfBar)*contentMoveLength/barMoveLength;
+	scrollTo(pageMove);
+
 });
-document.getElementById("trackDown").addEventListener("click", function () {
-    scrollToRelative(300);
+document.getElementById("trackDown").addEventListener("click", function (e) {
+    //scrollToRelative(300);
+	var clickY = e.clientY;
+	var halfBar = document.getElementById("scrollBar").offsetHeight/2;
+	var pageMove = (clickY-halfBar)*contentMoveLength/barMoveLength;
+	scrollTo(pageMove);
+
 });
  
 //为滑块注册鼠标按下事件处理程序，
@@ -78,15 +89,12 @@ document.addEventListener("mousemove", function (e) {
 
 //点击线条区域事件 1改变日志位置2改变方框位置
 
-var lines = document.getElementById("scrollTrack");
+//var lines = document.getElementById("scrollTrack");
 
-lines.addEventListener("click", function (e) {
+//lines.addEventListener("click", function (e) {
 	//alert("点！");
-    var clickY = e.offsetY;
-	var halfBar = document.getElementById("scrollBar").offsetHeight/2;
-	var pageMove = (clickY-halfBar)*contentMoveLength/barMoveLength;
-	scrollTo(pageMove);
-});
+    
+//});
 
 
 
